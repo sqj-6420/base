@@ -1,0 +1,110 @@
+@import "./reset.scss";
+
+body {
+  color: #333;
+  text-align: center;
+  font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑";
+  width: 1080px;
+  height: 1920px;
+  position: relative;
+}
+
+//文字超出宽度显示省略号 单行
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap
+}
+
+.ellipsis-more {
+  //文字超出宽度显示省略号 多行
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;//行数
+  overflow: hidden;
+  white-space: normal;
+}
+
+// 浮动处理
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.clearfix {
+
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+//tab--start
+.tab-body {
+  width: 880px;
+  height: 1190px;
+  margin: 0 auto;
+
+  .tab-list {
+    span {
+      vertical-align: bottom;
+      width: 440px;
+      height: 124px;
+      cursor: pointer;
+      display: inline-block;
+      font-size: 44px;
+      text-align: center;
+      color: #ffffff;
+      background: #247ed4;
+      height: 124px;
+      line-height: 124px;
+
+      &:nth-of-type(1) {
+        border-top-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+      }
+
+      &:nth-of-type(2) {
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+      }
+    }
+
+    .cur {
+      height: 133px;
+      font-family: "PingFangSC-Medium";
+      color: #0974f5 !important;
+      letter-spacing: 0.74px;
+      background-color: #ffffff !important;
+      border-bottom-left-radius: none;
+      border-bottom-right-radius: none;
+
+      &:nth-of-type(1) {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 0;
+      }
+
+      &:nth-of-type(2) {
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 0;
+      }
+    }
+  }
+
+  .line {
+    height: 23px;
+    background: #ffffff;
+  }
+}
+
+//tab-end
