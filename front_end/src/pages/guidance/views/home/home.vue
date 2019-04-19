@@ -7,20 +7,27 @@
 <script>
 // 获取配置信息，设置cookie
 import { getConfig, setCookie, getCookie } from "@/utils/guidance.url.js";
-import Axios from "axios";
 
 export default {
   name: "home",
   methods: {
+    // _getConfig() {
+    //   getConfig(
+    //     {
+    //       configId: "area"
+    //     },
+    //     "post"
+    //   ).then(res => {
+    //     setCookie("areaSeq", res.data.configVal);
+    //   });
+    // },
     _getConfig() {
-      getConfig(
-        {
+      getConfig({
           configId: "area"
         },
-        "get"
-      ).then(res => {
-        setCookie("areaSeq", res.data.configVal);
-      });
+        "get",(res)=>{
+          setCookie("areaSeq", res.data.configVal);
+        })
     }
   },
   created() {

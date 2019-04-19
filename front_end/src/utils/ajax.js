@@ -42,7 +42,7 @@ export function fetchData(url, data, type, callFunc, filter) {
     if (type === 'get') {
         config.params = data;
     } else {
-        config.data = sendData ? qs.stringify(data) : qs.stringify(data);
+        config.data = sendData ? sendData : qs.stringify(data);
     }
     if (!callFunc) {
         return axios(config)
